@@ -12,7 +12,7 @@ transcribers_finished = threading.Event()
 transcribers_count = 0
 classifiers_count = 0
 lock = threading.Lock()
-i = 0
+i = 1
 
 
 def process_audio_queue(audio_queue: Queue, transcriber_queue: Queue):
