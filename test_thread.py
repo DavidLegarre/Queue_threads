@@ -1,17 +1,51 @@
-import concurrent.futures
-import logging
-import time
+# SuperFastPython.com
+# example of using the queue
+from queue import Queue
+from random import random
+from threading import Thread
+from time import sleep
 
 
-def thread_function(name):
-    logging.info("Thread %s: starting", name)
-    time.sleep(2)
-    logging.info("Thread %s: finishing", name)
+# generate work
+def producer(queue):
+    print('Producer: Running')
+    # generate work
+    for i in range(10):
+        # generate a value
+        value = random()
+        # block
+        sleep(value)
+        # add to the queue
+        queue.put(value)
+    # all done
+    queue.put(None)
+    print('Producer: Done')
 
-if __name__ == "__main__":
-    format = "%(asctime)s: %(message)s"
-    logging.basicConfig(format=format, level=logging.INFO,
-                        datefmt="%H:%M:%S")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-        executor.map(thread_function, range(3))
+# consume work
+def consumer(queue):
+    print('Consumer: Running')
+    # consume work
+    while True:
+        # get a unit of work
+        item = queue.get()
+        # check for stop
+        if item is None:
+            break
+        # report
+        print(f'>got {item}')
+    # all done
+    print('Consumer: Done')
+
+
+# create the shared queue
+queue = Queue()
+# start the consumer
+consumer = Thread(target=consumer, args=(queue,))
+consumer.start()
+# start the producer
+producer = Thread(target=producer, args=(queue,))
+producer.start()
+# wait for all threads to finish
+producer.join()
+consumer.join()

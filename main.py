@@ -44,6 +44,11 @@ if __name__ == '__main__':
     [thread.start() for thread in transcriber_threads]
     [thread.start() for thread in classify_threads]
 
-    classify_threads[-1].join()
+    for thread in audio_threads:
+        thread.join()
+    for thread in transcriber_threads:
+        thread.join()
+    for thread in classify_threads:
+        thread.join()
 
     logger.warning("All threads finished!")
