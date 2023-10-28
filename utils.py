@@ -2,7 +2,7 @@ import string
 import logging
 import random
 
-NUM_AUDIOS = 10
+NUM_AUDIOS = 100
 
 AUDIO_DELAY = 1
 TRANSCRIBE_DELAY = 5
