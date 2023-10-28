@@ -1,0 +1,202 @@
+2023-10-27 19:39:07,321 - my_logger - INFO - This is a info message
+2023-10-27 19:39:07,321 - my_logger - INFO - Downloading audio with id:e4b78d3a-64ca-4c56-bdd5-e6978860c3e2
+2023-10-27 19:39:07,322 - my_logger - INFO - Downloading audio with id:82e757c3-64f0-4bbe-bfd4-184e839f89b7
+2023-10-27 19:39:07,322 - my_logger - INFO - Downloading audio with id:3cc8548e-68b9-4732-bedd-a07dafca8e24
+2023-10-27 19:39:07,322 - my_logger - INFO - Downloading audio with id:f3e29b15-4b01-424b-9a79-a806c016fceb
+2023-10-27 19:39:07,322 - my_logger - INFO - Downloading audio with id:8f8a1165-18fe-43a8-acc3-e537b10d6813
+2023-10-27 19:39:10,322 - my_logger - INFO - Audio Downloaded 3cc8548e-68b9-4732-bedd-a07dafca8e24.mp3
+2023-10-27 19:39:10,322 - my_logger - INFO - Audio Downloaded 82e757c3-64f0-4bbe-bfd4-184e839f89b7.mp3
+2023-10-27 19:39:10,322 - my_logger - INFO - Audio Downloaded e4b78d3a-64ca-4c56-bdd5-e6978860c3e2.mp3
+2023-10-27 19:39:10,322 - my_logger - INFO - Downloading audio with id:397f9097-cf7c-40b1-9837-5ce6a5ed6594
+2023-10-27 19:39:10,322 - my_logger - INFO - Transcribing audio 3cc8548e-68b9-4732-bedd-a07dafca8e24.mp3
+2023-10-27 19:39:10,322 - my_logger - INFO - Downloading audio with id:acac48aa-c83b-41bd-b94d-ca0731409d91
+2023-10-27 19:39:10,323 - my_logger - INFO - Audio Downloaded f3e29b15-4b01-424b-9a79-a806c016fceb.mp3
+2023-10-27 19:39:10,323 - my_logger - INFO - Transcribing audio 82e757c3-64f0-4bbe-bfd4-184e839f89b7.mp3
+2023-10-27 19:39:10,323 - my_logger - INFO - Audio Downloaded 8f8a1165-18fe-43a8-acc3-e537b10d6813.mp3
+2023-10-27 19:39:10,323 - my_logger - INFO - Downloading audio with id:f010a16c-5402-46be-913c-1631932871a2
+2023-10-27 19:39:10,323 - my_logger - INFO - Downloading audio with id:10a6b353-84e9-4781-b57e-604b9326efcd
+2023-10-27 19:39:10,323 - my_logger - INFO - Downloading audio with id:220d3c62-274e-4c96-8127-9bbf101ccb10
+2023-10-27 19:39:13,323 - my_logger - INFO - Audio Downloaded acac48aa-c83b-41bd-b94d-ca0731409d91.mp3
+2023-10-27 19:39:13,323 - my_logger - INFO - Downloading audio with id:b7236829-f17d-4ce9-b356-7cda54671106
+2023-10-27 19:39:13,323 - my_logger - INFO - Audio Downloaded 397f9097-cf7c-40b1-9837-5ce6a5ed6594.mp3
+2023-10-27 19:39:13,323 - my_logger - INFO - Downloading audio with id:4065521b-381a-46a1-994b-1ed6dbe04d92
+2023-10-27 19:39:13,324 - my_logger - INFO - Audio Downloaded 220d3c62-274e-4c96-8127-9bbf101ccb10.mp3
+2023-10-27 19:39:13,324 - my_logger - INFO - Audio Downloaded 10a6b353-84e9-4781-b57e-604b9326efcd.mp3
+2023-10-27 19:39:13,324 - my_logger - INFO - Audio Downloaded f010a16c-5402-46be-913c-1631932871a2.mp3
+2023-10-27 19:39:13,324 - my_logger - INFO - Downloading audio with id:63310be7-a65e-4c6b-ace9-61aaa44fa43c
+2023-10-27 19:39:13,324 - my_logger - INFO - Downloading audio with id:398e4be3-ba67-4ac7-bd73-5e200b5734df
+2023-10-27 19:39:13,324 - my_logger - INFO - Downloading audio with id:f2b74e51-2e8b-4868-964b-c12a0a064abc
+2023-10-27 19:39:15,323 - my_logger - INFO - Finished transcribing audio 3cc8548e-68b9-4732-bedd-a07dafca8e24.mp3 as vbqvxvt
+2023-10-27 19:39:15,323 - my_logger - INFO - Transcribing audio e4b78d3a-64ca-4c56-bdd5-e6978860c3e2.mp3
+2023-10-27 19:39:15,323 - my_logger - INFO - classifying transcription: vbqvxvt
+2023-10-27 19:39:15,324 - my_logger - INFO - Finished transcribing audio 82e757c3-64f0-4bbe-bfd4-184e839f89b7.mp3 as ztvvrqo
+2023-10-27 19:39:15,324 - my_logger - INFO - Transcribing audio f3e29b15-4b01-424b-9a79-a806c016fceb.mp3
+2023-10-27 19:39:15,324 - my_logger - INFO - classifying transcription: ztvvrqo
+2023-10-27 19:39:16,324 - my_logger - INFO - Audio Downloaded b7236829-f17d-4ce9-b356-7cda54671106.mp3
+2023-10-27 19:39:16,324 - my_logger - INFO - Downloading audio with id:2bf00267-7d49-4cfd-adf6-586afa90e79d
+2023-10-27 19:39:16,324 - my_logger - INFO - Audio Downloaded 4065521b-381a-46a1-994b-1ed6dbe04d92.mp3
+2023-10-27 19:39:16,324 - my_logger - INFO - Audio Downloaded f2b74e51-2e8b-4868-964b-c12a0a064abc.mp3
+2023-10-27 19:39:16,324 - my_logger - INFO - Audio Downloaded 63310be7-a65e-4c6b-ace9-61aaa44fa43c.mp3
+2023-10-27 19:39:16,324 - my_logger - INFO - Audio Downloaded 398e4be3-ba67-4ac7-bd73-5e200b5734df.mp3
+2023-10-27 19:39:16,324 - my_logger - INFO - Downloading audio with id:645b16ec-d70d-4f5e-8855-f3b0adf96e82
+2023-10-27 19:39:16,324 - my_logger - INFO - Downloading audio with id:6d84b896-162c-4841-86f9-27a67288ba85
+2023-10-27 19:39:16,324 - my_logger - INFO - Downloading audio with id:caa7f9ca-3b0d-4bc6-a7d4-b59217fef198
+2023-10-27 19:39:16,324 - my_logger - INFO - Downloading audio with id:0c0db709-5a90-42e1-9058-e92ef267a1d3
+2023-10-27 19:39:19,324 - my_logger - INFO - Audio Downloaded 2bf00267-7d49-4cfd-adf6-586afa90e79d.mp3
+2023-10-27 19:39:19,324 - my_logger - INFO - Downloading audio with id:17b588a8-b3b1-4175-83f1-15e88abe3f2c
+2023-10-27 19:39:19,325 - my_logger - INFO - Audio Downloaded 0c0db709-5a90-42e1-9058-e92ef267a1d3.mp3
+2023-10-27 19:39:19,325 - my_logger - INFO - Audio Downloaded 6d84b896-162c-4841-86f9-27a67288ba85.mp3
+2023-10-27 19:39:19,325 - my_logger - INFO - Audio Downloaded 645b16ec-d70d-4f5e-8855-f3b0adf96e82.mp3
+2023-10-27 19:39:19,325 - my_logger - INFO - Audio Downloaded caa7f9ca-3b0d-4bc6-a7d4-b59217fef198.mp3
+2023-10-27 19:39:19,325 - my_logger - INFO - Downloading audio with id:cf83577a-9bbf-4290-8a23-02e7c8b7a29d
+2023-10-27 19:39:19,325 - my_logger - INFO - Downloading audio with id:44d73201-1421-4cf9-a46c-90dd140629cb
+2023-10-27 19:39:19,325 - my_logger - INFO - Downloading audio with id:821d464a-8a7d-43f6-a23a-a2dc30ce7f01
+2023-10-27 19:39:19,325 - my_logger - INFO - Downloading audio with id:b1a78d00-6b97-466d-99a7-8f2345f6be62
+2023-10-27 19:39:20,324 - my_logger - INFO - Finished transcribing audio e4b78d3a-64ca-4c56-bdd5-e6978860c3e2.mp3 as icnhxqm
+2023-10-27 19:39:20,324 - my_logger - INFO - Transcribing audio 8f8a1165-18fe-43a8-acc3-e537b10d6813.mp3
+2023-10-27 19:39:20,324 - my_logger - INFO - classifying transcription: icnhxqm
+2023-10-27 19:39:20,324 - my_logger - INFO - Finished transcribing audio f3e29b15-4b01-424b-9a79-a806c016fceb.mp3 as wdlbsbo
+2023-10-27 19:39:20,324 - my_logger - INFO - Transcribing audio acac48aa-c83b-41bd-b94d-ca0731409d91.mp3
+2023-10-27 19:39:20,324 - my_logger - INFO - classifying transcription: wdlbsbo
+2023-10-27 19:39:22,324 - my_logger - INFO - transcription 'vbqvxvt classified as agent'
+2023-10-27 19:39:22,324 - my_logger - INFO - transcription 'ztvvrqo classified as agent'
+2023-10-27 19:39:22,325 - my_logger - INFO - Audio Downloaded 17b588a8-b3b1-4175-83f1-15e88abe3f2c.mp3
+2023-10-27 19:39:22,325 - my_logger - INFO - Downloading audio with id:10065753-9c83-4113-9500-770d737d221d
+2023-10-27 19:39:22,326 - my_logger - INFO - Audio Downloaded 44d73201-1421-4cf9-a46c-90dd140629cb.mp3
+2023-10-27 19:39:22,326 - my_logger - INFO - Audio Downloaded 821d464a-8a7d-43f6-a23a-a2dc30ce7f01.mp3
+2023-10-27 19:39:22,326 - my_logger - INFO - Audio Downloaded b1a78d00-6b97-466d-99a7-8f2345f6be62.mp3
+2023-10-27 19:39:22,326 - my_logger - INFO - Audio Downloaded cf83577a-9bbf-4290-8a23-02e7c8b7a29d.mp3
+2023-10-27 19:39:22,326 - my_logger - INFO - Downloading audio with id:00cdb439-dbbb-48fd-8de8-e089821dc2b4
+2023-10-27 19:39:22,326 - my_logger - INFO - Downloading audio with id:da18d739-843e-4a5b-8559-a957925839b4
+2023-10-27 19:39:22,326 - my_logger - INFO - Downloading audio with id:43c26d12-9725-4639-a727-7b766d7eb748
+2023-10-27 19:39:22,326 - my_logger - INFO - Downloading audio with id:e4c2cd7b-60f5-4332-9fcb-a039b53dd732
+2023-10-27 19:39:25,324 - my_logger - INFO - Finished transcribing audio 8f8a1165-18fe-43a8-acc3-e537b10d6813.mp3 as kyagsnu
+2023-10-27 19:39:25,324 - my_logger - INFO - Transcribing audio 397f9097-cf7c-40b1-9837-5ce6a5ed6594.mp3
+2023-10-27 19:39:25,324 - my_logger - INFO - classifying transcription: kyagsnu
+2023-10-27 19:39:25,325 - my_logger - INFO - Finished transcribing audio acac48aa-c83b-41bd-b94d-ca0731409d91.mp3 as fojpynw
+2023-10-27 19:39:25,325 - my_logger - INFO - Transcribing audio 220d3c62-274e-4c96-8127-9bbf101ccb10.mp3
+2023-10-27 19:39:25,325 - my_logger - INFO - classifying transcription: fojpynw
+2023-10-27 19:39:25,325 - my_logger - INFO - Audio Downloaded 10065753-9c83-4113-9500-770d737d221d.mp3
+2023-10-27 19:39:25,325 - my_logger - INFO - Downloading audio with id:ab062030-3562-42f6-a65e-9bed441966e8
+2023-10-27 19:39:25,326 - my_logger - INFO - Audio Downloaded 00cdb439-dbbb-48fd-8de8-e089821dc2b4.mp3
+2023-10-27 19:39:25,326 - my_logger - INFO - Audio Downloaded e4c2cd7b-60f5-4332-9fcb-a039b53dd732.mp3
+2023-10-27 19:39:25,326 - my_logger - INFO - Audio Downloaded da18d739-843e-4a5b-8559-a957925839b4.mp3
+2023-10-27 19:39:25,326 - my_logger - INFO - Audio Downloaded 43c26d12-9725-4639-a727-7b766d7eb748.mp3
+2023-10-27 19:39:25,326 - my_logger - INFO - Downloading audio with id:5885a6a3-715c-4174-936d-2350814f5036
+2023-10-27 19:39:25,326 - my_logger - INFO - Downloading audio with id:9c29bff7-a440-4f03-af28-bfb3d8b8ce0b
+2023-10-27 19:39:25,326 - my_logger - INFO - Downloading audio with id:02b878c8-0a4b-4ce1-adb1-a6e498bc83b0
+2023-10-27 19:39:25,326 - my_logger - INFO - Downloading audio with id:fb6ed7e2-32b2-484a-bd76-735665fe71c9
+2023-10-27 19:39:27,325 - my_logger - INFO - transcription 'icnhxqm classified as client'
+2023-10-27 19:39:27,325 - my_logger - INFO - transcription 'wdlbsbo classified as client'
+2023-10-27 19:39:28,326 - my_logger - INFO - Audio Downloaded ab062030-3562-42f6-a65e-9bed441966e8.mp3
+2023-10-27 19:39:28,326 - my_logger - INFO - Downloading audio with id:d6bcbc38-d3cc-47a8-8549-bbdeba6dedc4
+2023-10-27 19:39:28,327 - my_logger - INFO - Audio Downloaded 5885a6a3-715c-4174-936d-2350814f5036.mp3
+2023-10-27 19:39:28,327 - my_logger - INFO - Audio Downloaded fb6ed7e2-32b2-484a-bd76-735665fe71c9.mp3
+2023-10-27 19:39:28,327 - my_logger - INFO - Audio Downloaded 9c29bff7-a440-4f03-af28-bfb3d8b8ce0b.mp3
+2023-10-27 19:39:28,327 - my_logger - INFO - Audio Downloaded 02b878c8-0a4b-4ce1-adb1-a6e498bc83b0.mp3
+2023-10-27 19:39:28,327 - my_logger - INFO - Downloading audio with id:28482114-c702-4449-ba6f-1e2fd7dbf358
+2023-10-27 19:39:28,327 - my_logger - INFO - Downloading audio with id:982be254-3e60-4b2d-a77d-f8f183f0c140
+2023-10-27 19:39:28,327 - my_logger - INFO - Downloading audio with id:3c95d10b-f153-41de-a5b3-cf560df5cd24
+2023-10-27 19:39:28,327 - my_logger - INFO - Downloading audio with id:f09e221d-64ad-473d-83cb-b7c2ec18c643
+2023-10-27 19:39:30,325 - my_logger - INFO - Finished transcribing audio 397f9097-cf7c-40b1-9837-5ce6a5ed6594.mp3 as jbvehzq
+2023-10-27 19:39:30,325 - my_logger - INFO - Finished transcribing audio 220d3c62-274e-4c96-8127-9bbf101ccb10.mp3 as uvulkhx
+2023-10-27 19:39:30,325 - my_logger - INFO - Transcribing audio 10a6b353-84e9-4781-b57e-604b9326efcd.mp3
+2023-10-27 19:39:30,325 - my_logger - INFO - classifying transcription: jbvehzq
+2023-10-27 19:39:30,325 - my_logger - INFO - Transcribing audio f010a16c-5402-46be-913c-1631932871a2.mp3
+2023-10-27 19:39:30,325 - my_logger - INFO - classifying transcription: uvulkhx
+2023-10-27 19:39:31,327 - my_logger - INFO - Audio Downloaded d6bcbc38-d3cc-47a8-8549-bbdeba6dedc4.mp3
+2023-10-27 19:39:31,327 - my_logger - INFO - Downloading audio with id:4656b020-f2f4-473e-b911-7ca601714350
+2023-10-27 19:39:31,328 - my_logger - INFO - Audio Downloaded 3c95d10b-f153-41de-a5b3-cf560df5cd24.mp3
+2023-10-27 19:39:31,328 - my_logger - INFO - Audio Downloaded 982be254-3e60-4b2d-a77d-f8f183f0c140.mp3
+2023-10-27 19:39:31,328 - my_logger - INFO - Audio Downloaded 28482114-c702-4449-ba6f-1e2fd7dbf358.mp3
+2023-10-27 19:39:31,328 - my_logger - INFO - Audio Downloaded f09e221d-64ad-473d-83cb-b7c2ec18c643.mp3
+2023-10-27 19:39:31,328 - my_logger - INFO - Downloading audio with id:0cc93f34-8923-464e-acc0-20cba565467f
+2023-10-27 19:39:31,328 - my_logger - INFO - Downloading audio with id:5a80df2e-8457-4700-b1b9-536167f46af9
+2023-10-27 19:39:31,328 - my_logger - INFO - Downloading audio with id:a02c28b5-8bad-4dbf-9b33-64b5f8c4ca38
+2023-10-27 19:39:31,328 - my_logger - INFO - Downloading audio with id:b56150c0-81c0-4209-bbf3-78ed61d55836
+2023-10-27 19:39:32,325 - my_logger - INFO - transcription 'fojpynw classified as agent'
+2023-10-27 19:39:32,325 - my_logger - INFO - transcription 'kyagsnu classified as agent'
+2023-10-27 19:39:34,327 - my_logger - INFO - Audio Downloaded 4656b020-f2f4-473e-b911-7ca601714350.mp3
+2023-10-27 19:39:34,327 - my_logger - INFO - Downloading audio with id:8c03f1fd-a20b-4187-8097-6e29c78b81f6
+2023-10-27 19:39:34,328 - my_logger - INFO - Audio Downloaded 0cc93f34-8923-464e-acc0-20cba565467f.mp3
+2023-10-27 19:39:34,328 - my_logger - INFO - Audio Downloaded 5a80df2e-8457-4700-b1b9-536167f46af9.mp3
+2023-10-27 19:39:34,328 - my_logger - INFO - Downloading audio with id:f2f6e53b-6845-408b-abb2-97a1c634efa6
+2023-10-27 19:39:34,328 - my_logger - INFO - Downloading audio with id:df67566b-c401-4d93-9da0-a10e16452358
+2023-10-27 19:39:34,329 - my_logger - INFO - Audio Downloaded a02c28b5-8bad-4dbf-9b33-64b5f8c4ca38.mp3
+2023-10-27 19:39:34,329 - my_logger - INFO - Audio Downloaded b56150c0-81c0-4209-bbf3-78ed61d55836.mp3
+2023-10-27 19:39:34,329 - my_logger - INFO - Downloading audio with id:c326ab83-e75a-4128-ba4c-63f34edce4ff
+2023-10-27 19:39:34,329 - my_logger - INFO - Downloading audio with id:35d59d8f-63c2-4497-b742-79b350250d1d
+2023-10-27 19:39:35,326 - my_logger - INFO - Finished transcribing audio f010a16c-5402-46be-913c-1631932871a2.mp3 as htngwct
+2023-10-27 19:39:35,326 - my_logger - INFO - Finished transcribing audio 10a6b353-84e9-4781-b57e-604b9326efcd.mp3 as yomqqhe
+2023-10-27 19:39:35,326 - my_logger - INFO - Transcribing audio b7236829-f17d-4ce9-b356-7cda54671106.mp3
+2023-10-27 19:39:35,326 - my_logger - INFO - classifying transcription: htngwct
+2023-10-27 19:39:35,326 - my_logger - INFO - Transcribing audio 4065521b-381a-46a1-994b-1ed6dbe04d92.mp3
+2023-10-27 19:39:35,326 - my_logger - INFO - classifying transcription: yomqqhe
+2023-10-27 19:39:37,326 - my_logger - INFO - transcription 'jbvehzq classified as client'
+2023-10-27 19:39:37,326 - my_logger - INFO - transcription 'uvulkhx classified as client'
+2023-10-27 19:39:37,327 - my_logger - INFO - Audio Downloaded 8c03f1fd-a20b-4187-8097-6e29c78b81f6.mp3
+2023-10-27 19:39:37,327 - my_logger - INFO - Downloading audio with id:3abdaf96-d902-4ffe-bbb8-66ed19d51dde
+2023-10-27 19:39:37,328 - my_logger - INFO - Audio Downloaded df67566b-c401-4d93-9da0-a10e16452358.mp3
+2023-10-27 19:39:37,328 - my_logger - INFO - Audio Downloaded f2f6e53b-6845-408b-abb2-97a1c634efa6.mp3
+2023-10-27 19:39:37,328 - my_logger - INFO - Downloading audio with id:712cbba2-c08e-488f-9788-7e10cf2eb081
+2023-10-27 19:39:37,328 - my_logger - INFO - Downloading audio with id:204e7011-defb-40d7-a6b8-55adfb13b055
+2023-10-27 19:39:37,329 - my_logger - INFO - Audio Downloaded c326ab83-e75a-4128-ba4c-63f34edce4ff.mp3
+2023-10-27 19:39:37,329 - my_logger - INFO - Audio Downloaded 35d59d8f-63c2-4497-b742-79b350250d1d.mp3
+2023-10-27 19:39:37,329 - my_logger - INFO - Downloading audio with id:0a29f1fd-b6a7-42e9-a1fe-0e4290a7e328
+2023-10-27 19:39:37,329 - my_logger - INFO - Downloading audio with id:0bbcaf48-a1d3-4aa7-b570-d61b86c609a7
+2023-10-27 19:39:40,326 - my_logger - INFO - Finished transcribing audio b7236829-f17d-4ce9-b356-7cda54671106.mp3 as xanmoel
+2023-10-27 19:39:40,326 - my_logger - INFO - Finished transcribing audio 4065521b-381a-46a1-994b-1ed6dbe04d92.mp3 as zyebotk
+2023-10-27 19:39:40,326 - my_logger - INFO - Transcribing audio f2b74e51-2e8b-4868-964b-c12a0a064abc.mp3
+2023-10-27 19:39:40,326 - my_logger - INFO - classifying transcription: xanmoel
+2023-10-27 19:39:40,326 - my_logger - INFO - Transcribing audio 63310be7-a65e-4c6b-ace9-61aaa44fa43c.mp3
+2023-10-27 19:39:40,326 - my_logger - INFO - classifying transcription: zyebotk
+2023-10-27 19:39:40,328 - my_logger - INFO - Audio Downloaded 3abdaf96-d902-4ffe-bbb8-66ed19d51dde.mp3
+2023-10-27 19:39:40,328 - my_logger - INFO - Downloading audio with id:d170f777-d7d8-4072-9bc4-d11b4f5e17d8
+2023-10-27 19:39:40,329 - my_logger - INFO - Audio Downloaded 712cbba2-c08e-488f-9788-7e10cf2eb081.mp3
+2023-10-27 19:39:40,329 - my_logger - INFO - Audio Downloaded 204e7011-defb-40d7-a6b8-55adfb13b055.mp3
+2023-10-27 19:39:40,329 - my_logger - INFO - Downloading audio with id:3b41a4b0-ea3c-47ab-9e43-d010a902c9cd
+2023-10-27 19:39:40,329 - my_logger - INFO - Downloading audio with id:846f4868-525d-4bfe-9aa5-ee4ce39f012e
+2023-10-27 19:39:40,330 - my_logger - INFO - Audio Downloaded 0bbcaf48-a1d3-4aa7-b570-d61b86c609a7.mp3
+2023-10-27 19:39:40,330 - my_logger - INFO - Audio Downloaded 0a29f1fd-b6a7-42e9-a1fe-0e4290a7e328.mp3
+2023-10-27 19:39:40,330 - my_logger - INFO - Downloading audio with id:c10d877e-5c1e-460e-90dd-ad4142ff98dc
+2023-10-27 19:39:40,330 - my_logger - INFO - Downloading audio with id:3ae8aaf5-d740-4c71-ae07-c25b3cd2fe59
+2023-10-27 19:39:42,327 - my_logger - INFO - transcription 'htngwct classified as agent'
+2023-10-27 19:39:42,327 - my_logger - INFO - transcription 'yomqqhe classified as client'
+2023-10-27 19:39:43,329 - my_logger - INFO - Audio Downloaded d170f777-d7d8-4072-9bc4-d11b4f5e17d8.mp3
+2023-10-27 19:39:43,329 - my_logger - INFO - Downloading audio with id:902bd5ef-5a3f-4941-ab83-de484f019332
+2023-10-27 19:39:43,330 - my_logger - INFO - Audio Downloaded 846f4868-525d-4bfe-9aa5-ee4ce39f012e.mp3
+2023-10-27 19:39:43,330 - my_logger - INFO - Audio Downloaded 3b41a4b0-ea3c-47ab-9e43-d010a902c9cd.mp3
+2023-10-27 19:39:43,330 - my_logger - INFO - Downloading audio with id:6ca3fd7d-0d40-462a-b662-22c6f27f4964
+2023-10-27 19:39:43,330 - my_logger - INFO - Downloading audio with id:df5768d1-9c24-4f99-9510-9870cb79de15
+2023-10-27 19:39:43,330 - my_logger - INFO - Audio Downloaded c10d877e-5c1e-460e-90dd-ad4142ff98dc.mp3
+2023-10-27 19:39:43,330 - my_logger - INFO - Audio Downloaded 3ae8aaf5-d740-4c71-ae07-c25b3cd2fe59.mp3
+2023-10-27 19:39:43,330 - my_logger - INFO - Downloading audio with id:887734c4-7df7-45fa-bcc9-e84c4205bc1c
+2023-10-27 19:39:43,330 - my_logger - INFO - Downloading audio with id:c39745c7-092d-41a4-8df2-35633805b444
+2023-10-27 19:39:45,327 - my_logger - INFO - Finished transcribing audio 63310be7-a65e-4c6b-ace9-61aaa44fa43c.mp3 as owertbo
+2023-10-27 19:39:45,327 - my_logger - INFO - Finished transcribing audio f2b74e51-2e8b-4868-964b-c12a0a064abc.mp3 as vgdlfqy
+2023-10-27 19:39:45,327 - my_logger - INFO - Transcribing audio 398e4be3-ba67-4ac7-bd73-5e200b5734df.mp3
+2023-10-27 19:39:45,327 - my_logger - INFO - classifying transcription: owertbo
+2023-10-27 19:39:45,327 - my_logger - INFO - Transcribing audio 2bf00267-7d49-4cfd-adf6-586afa90e79d.mp3
+2023-10-27 19:39:45,327 - my_logger - INFO - classifying transcription: vgdlfqy
+2023-10-27 19:39:46,329 - my_logger - INFO - Audio Downloaded 902bd5ef-5a3f-4941-ab83-de484f019332.mp3
+2023-10-27 19:39:46,329 - my_logger - INFO - Downloading audio with id:00a39a9a-8838-4bf9-a603-68381b6269b3
+2023-10-27 19:39:46,330 - my_logger - INFO - Audio Downloaded 6ca3fd7d-0d40-462a-b662-22c6f27f4964.mp3
+2023-10-27 19:39:46,330 - my_logger - INFO - Audio Downloaded df5768d1-9c24-4f99-9510-9870cb79de15.mp3
+2023-10-27 19:39:46,330 - my_logger - INFO - Downloading audio with id:2e359843-574d-4944-a8fc-253bb67e6af8
+2023-10-27 19:39:46,330 - my_logger - INFO - Downloading audio with id:26b8ac4a-5260-4d59-bfd7-c76c1877d393
+2023-10-27 19:39:46,331 - my_logger - INFO - Audio Downloaded 887734c4-7df7-45fa-bcc9-e84c4205bc1c.mp3
+2023-10-27 19:39:46,331 - my_logger - INFO - Audio Downloaded c39745c7-092d-41a4-8df2-35633805b444.mp3
+2023-10-27 19:39:46,331 - my_logger - INFO - Downloading audio with id:e1ab180a-0db5-4973-a188-11cca68accc4
+2023-10-27 19:39:46,331 - my_logger - INFO - Downloading audio with id:92d19e98-8ac6-4ade-abb4-16ff80662003
+2023-10-27 19:39:47,327 - my_logger - INFO - transcription 'zyebotk classified as client'
+2023-10-27 19:39:47,327 - my_logger - INFO - transcription 'xanmoel classified as client'
+2023-10-27 19:39:49,330 - my_logger - INFO - Audio Downloaded 00a39a9a-8838-4bf9-a603-68381b6269b3.mp3
+2023-10-27 19:39:49,330 - my_logger - INFO - Downloading audio with id:e1bec789-f64f-4510-a55a-e2024b8ee0a8
+2023-10-27 19:39:49,331 - my_logger - INFO - Audio Downloaded 2e359843-574d-4944-a8fc-253bb67e6af8.mp3
+2023-10-27 19:39:49,331 - my_logger - INFO - Audio Downloaded 26b8ac4a-5260-4d59-bfd7-c76c1877d393.mp3
+2023-10-27 19:39:49,331 - my_logger - INFO - Downloading audio with id:b4161e1c-8973-4227-a750-657e9d62236e
+2023-10-27 19:39:49,331 - my_logger - INFO - Downloading audio with id:e2e0c080-3557-4e2d-ad67-ec1169b42046
+2023-10-27 19:39:49,331 - my_logger - INFO - Audio Downloaded 92d19e98-8ac6-4ade-abb4-16ff80662003.mp3
+2023-10-27 19:39:49,331 - my_logger - INFO - Audio Downloaded e1ab180a-0db5-4973-a188-11cca68accc4.mp3
+2023-10-27 19:39:49,331 - my_logger - INFO - Downloading audio with id:31e978bb-0a98-4cd3-9417-eaf4590dfd73
+2023-10-27 19:39:49,331 - my_logger - INFO - Downloading audio with id:5dc3f029-ddfe-4482-b4ae-074ff21dd367
