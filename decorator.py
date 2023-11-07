@@ -6,6 +6,7 @@ class TokenCounter:
         self.limit = limit
         self.count = 0
         self.event = threading.Event()
+        self.lock = threading.Lock()
 
     def __enter__(self):
         return self
@@ -14,7 +15,8 @@ class TokenCounter:
         pass
 
     def count_tokens(self):
-        self.count += 1
+        with self.lock:
+            self.count += 1
         if self.count > self.limit:
             self.event.set()
         print(f"The count right now is: {self.count}")
