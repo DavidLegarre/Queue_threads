@@ -26,12 +26,11 @@ background-color: green;
 padding: 8px;
 border-radius: 8px;
 """
-conversation = {
-    f"client - {client[0][0]}": client[0][1],
-    f"agent - {agent[0][0]}": agent[0][1],
-    f"client - {client[1][0]}": client[1][1],
-}
 
-if __name__ == '__main__':
-    for key, item in conversation.items():
-        print(f"{key}: {''.join(str(item))}")
+companion_style = """
+background-color: cyan;
+padding: 8px;
+border-radius: 8px;
+"""
+
+companion = [(dt_, "Hola, soy el GPT"), (dt2_, "Recomiendo xxx"), (dt3_, "Adios GPT")]

@@ -3,9 +3,9 @@ from datetime import datetime
 from threading import Thread, Event
 
 from PySide6.QtCore import Qt, Slot, QObject, Signal
-from PySide6.QtWidgets import QApplication, QWidget, QTextEdit, QVBoxLayout, QLabel
+from PySide6.QtWidgets import QApplication, QWidget, QTextEdit, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QLineEdit
 
-from src.data.data import client_style, agent_style
+from src.data.data import client_style, agent_style, companion_style
 
 
 class MessageReceiver(QObject):
@@ -29,58 +29,81 @@ class MessageReceiver(QObject):
             Event().wait(2)
 
 
-class ChatLayout(QWidget):
-    def __init__(self, message_receiver):
+class ChatLayout(QMainWindow):
+    def __init__(self, **kwargs):
         super().__init__()
-        self.layout = None
-        self.chat_area = None
-        self.input_area = None
         self.setWindowTitle("Chat")
-        self.message_receiver = message_receiver
+
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        self.chat_receiver = kwargs.get('chat_receiver', None)
+        self.companion_receiver = kwargs.get('companion_receiver', None)
         self.setup_ui()
-        self.message_receiver.messageReceived.connect(self.add_message)
+        self.chat_receiver.messageReceived.connect(self.add_chat_message)
+        self.companion_receiver.messageReceived.connect(self.add_companion_message)
 
     def setup_ui(self):
         """Initializes the ui for the application"""
         # init layout
-        self.layout = QVBoxLayout()
+        self.layout = QGridLayout(self.centralWidget())
 
         # Chat area to display messages
-        self.chat_area = QVBoxLayout()
-        self.layout.addLayout(self.chat_area)
+        self.column0 = QVBoxLayout()
+        self.input_chat = QVBoxLayout()
+        input_textbox = QLineEdit()
+        self.input_chat.addWidget(input_textbox)
 
-        # Input are for typing messages
-        self.input_area = QTextEdit()
-        self.layout.addWidget(self.input_area)
+        # Second column for companion
+        self.column1 = QVBoxLayout()
 
-        self.setLayout(self.layout)
+        self.layout.addLayout(self.column0, 0, 0)
+        self.layout.addLayout(self.input_chat, 1, 0)
+        self.layout.addLayout(self.column1, 0, 1)
 
     @Slot(dict)
-    def add_message(self, message_dict):
+    def add_chat_message(self, message_dict):
         speaker = message_dict.get("speaker", "agent")
         timestamp = message_dict.get(
             "timestamp", datetime.now().strftime("%H:%M:%S")
         )
         message = message_dict.get("message", "")
-        message_widget = QLabel(f"{timestamp}: {message}")
 
         if speaker == 'cliente':
+            message_widget = QLabel(f"{timestamp}: {message}")
             message_widget.setAlignment(Qt.AlignLeft)
             message_widget.setStyleSheet(client_style)
         elif speaker == 'agente':
+            message_widget = QLabel(f"{message} :{timestamp}")
             message_widget.setAlignment(Qt.AlignRight)
             message_widget.setStyleSheet(agent_style)
 
-        self.chat_area.addWidget(message_widget)
+        self.column0.addWidget(message_widget)
+
+    @Slot(dict)
+    def add_companion_message(self, message_dict):
+        timestamp = message_dict.get('timestamp')
+        message = message_dict.get('message')
+
+        message_widget = QLabel(f"{timestamp}: {message}")
+        message_widget.setAlignment(Qt.AlignCenter)
+        message_widget.setStyleSheet(companion_style)
+
+        self.column1.addWidget(message_widget)
 
 
 def run_app(*args, **kwargs):
     app = QApplication(sys.argv)
-    transcribe_queue = args[0]
-    message_receiver = MessageReceiver(transcribe_queue)
-    window = ChatLayout(message_receiver)
+    transcribe_queue, companion_queue = args
+    chat_receiver = MessageReceiver(transcribe_queue)
+    companion_receiver = MessageReceiver(companion_queue)
+    kwargs = {
+        'companion_receiver': companion_receiver,
+        'chat_receiver': chat_receiver
+    }
+    window = ChatLayout(**kwargs)
     window.show()
 
-    message_receiver.start_receiving_messages()
+    chat_receiver.start_receiving_messages()
+    companion_receiver.start_receiving_messages()
 
     sys.exit(app.exec())

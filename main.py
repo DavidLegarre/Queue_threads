@@ -2,15 +2,17 @@ from datetime import datetime
 from queue import Queue
 from threading import Thread
 
-from src.data.data import agent, client
+from src.data.data import agent, client, companion
 from src.gui.gui import run_app
 
 
 def main():
     transcribe_queue = Queue()
+    companion_queue = Queue()
     window_thread = Thread(target=run_app,
-                           args=(transcribe_queue,),
+                           args=(transcribe_queue, companion_queue),
                            daemon=True)
+
     conversation = client + agent
     sorted_conversation = sorted(conversation, key=lambda x: datetime.strptime(x[1], "%H:%M:%S"))
 
@@ -21,6 +23,13 @@ def main():
             "message": conversation[2],
         }
         transcribe_queue.put(message_dict)
+
+    for msg in companion:
+        message_dict = {
+            "timestamp": msg[0],
+            "message": msg[1]
+        }
+        companion_queue.put(message_dict)
 
     window_thread.start()
     window_thread.join()
