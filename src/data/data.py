@@ -11,10 +11,21 @@ dt_ = dt.strftime("%H:%M:%S")
 dt2_ = dt2.strftime("%H:%M:%S")
 dt3_ = dt3.strftime("%H:%M:%S")
 
-client = [(dt_, "Hola soy el cliente"), (dt3_, "Adios")]
+client = [("cliente", dt_, "Hola soy el cliente"), ("cliente", dt3_, "Adios")]
 
-agent = [(dt2_, "Hola soy el agente")]
+agent = [("agente", dt2_, "Hola soy el agente")]
 
+client_style = """
+background-color: lightblue;
+padding: 8px;
+border-radius: 8px;
+"""
+
+agent_style = """
+background-color: green;
+padding: 8px;
+border-radius: 8px;
+"""
 conversation = {
     f"client - {client[0][0]}": client[0][1],
     f"agent - {agent[0][0]}": agent[0][1],
