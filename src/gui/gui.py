@@ -4,7 +4,7 @@ from threading import Thread, Event
 
 from PySide6.QtCore import Qt, Slot, QObject, Signal
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QLineEdit, \
-    QScrollArea
+    QScrollArea, QSizePolicy
 
 from src.data.data import client_style, agent_style, companion_style
 
@@ -37,6 +37,7 @@ class ChatLayout(QMainWindow):
         self.setWindowTitle("Chat")
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
+        self.resize(800, 600)
 
         # Set message receiver objects
         self.chat_receiver = kwargs.get('chat_receiver', None)
@@ -55,18 +56,23 @@ class ChatLayout(QMainWindow):
         self.layout = QGridLayout(self.centralWidget())
 
         """Left column"""
-        self.column0 = QVBoxLayout()
+        column0_wrapper = QVBoxLayout()
 
         # setup title
         column0_title = QLabel("Transcription")
         column0_title.setAlignment(Qt.AlignCenter)
-        self.column0.addWidget(column0_title)
 
         # Scrollable chat history
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
-        scroll_content = QWidget()
-        scroll_content.setLayout(self.column0)
+
+        self.column0 = QVBoxLayout()
+        self.scroll_content = QWidget()
+        self.scroll_content.setLayout(self.column0)
+
+        column0_wrapper.addWidget(column0_title)
+        column0_wrapper.addWidget(scroll_area)
+
 
         # setup input text area
         self.input_chat = QVBoxLayout()
@@ -82,9 +88,9 @@ class ChatLayout(QMainWindow):
         self.column1.addWidget(column1_title)
 
         # Setup layout
-        scroll_area.setWidget(scroll_content)
-        self.layout.addWidget(scroll_area, 0, 0)
-        self.layout.addLayout(self.column0, 0, 0)
+        scroll_area.setWidget(self.scroll_content)
+        self.layout.addWidget(scroll_area)
+        self.layout.addLayout(column0_wrapper, 0, 0)
         self.layout.addLayout(self.input_chat, 1, 0)
         self.layout.addLayout(self.column1, 0, 1)
 
@@ -105,6 +111,8 @@ class ChatLayout(QMainWindow):
             message_widget = QLabel(f"{message} {timestamp}")
             message_widget.setAlignment(Qt.AlignRight)
             message_widget.setStyleSheet(agent_style)
+
+        message_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
         self.column0.addWidget(message_widget)
 
