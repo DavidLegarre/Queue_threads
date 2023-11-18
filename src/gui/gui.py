@@ -3,7 +3,8 @@ from datetime import datetime
 from threading import Thread, Event
 
 from PySide6.QtCore import Qt, Slot, QObject, Signal
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QLineEdit
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QLineEdit, \
+    QScrollArea
 
 from src.data.data import client_style, agent_style, companion_style
 
@@ -61,6 +62,12 @@ class ChatLayout(QMainWindow):
         column0_title.setAlignment(Qt.AlignCenter)
         self.column0.addWidget(column0_title)
 
+        # Scrollable chat history
+        scroll_area = QScrollArea()
+        scroll_area.setWidgetResizable(True)
+        scroll_content = QWidget()
+        scroll_content.setLayout(self.column0)
+
         # setup input text area
         self.input_chat = QVBoxLayout()
         input_textbox = QLineEdit()
@@ -74,6 +81,9 @@ class ChatLayout(QMainWindow):
         column1_title.setAlignment(Qt.AlignCenter)
         self.column1.addWidget(column1_title)
 
+        # Setup layout
+        scroll_area.setWidget(scroll_content)
+        self.layout.addWidget(scroll_area, 0, 0)
         self.layout.addLayout(self.column0, 0, 0)
         self.layout.addLayout(self.input_chat, 1, 0)
         self.layout.addLayout(self.column1, 0, 1)

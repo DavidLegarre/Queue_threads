@@ -3,6 +3,7 @@ from queue import Queue
 from threading import Thread
 
 from src.data.data import agent, client, companion
+from src.gui.conversation_fetcher import generate_messages
 from src.gui.gui import run_app
 
 
@@ -12,6 +13,10 @@ def main():
     window_thread = Thread(target=run_app,
                            args=(transcribe_queue, companion_queue),
                            daemon=True)
+
+    transcriber_thread = Thread(target=generate_messages,
+                                args=(transcribe_queue,),
+                                daemon=True)
 
     conversation = client + agent
     sorted_conversation = sorted(conversation, key=lambda x: datetime.strptime(x[1], "%H:%M:%S"))
@@ -32,6 +37,7 @@ def main():
         companion_queue.put(message_dict)
 
     window_thread.start()
+    transcriber_thread.start()
     window_thread.join()
 
 
