@@ -6,6 +6,7 @@ from threading import Thread, Event
 from PySide6.QtCore import Qt, Slot, QObject, Signal
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QSizePolicy, \
     QScrollArea, QListWidget, QHBoxLayout, QLineEdit, QPushButton, QListWidgetItem
+from qt_material import apply_stylesheet
 
 from src.data.data import client_style, agent_style, companion_style, input_style
 
@@ -113,11 +114,15 @@ class ChatLayout(QMainWindow):
 
     def add_message_chat_history(self, message: str | QLabel):
         item = QListWidgetItem(self.chat_history)
+
         if isinstance(message, str):
             message = QLabel(message)
             message.setAlignment(Qt.AlignRight)
             message.setStyleSheet(input_style)
-            message.setWordWrap(True)
+            # message.setWordWrap(True)
+
+        message.adjustSize()
+
         item.setSizeHint(message.sizeHint())
         self.chat_history.addItem(item)
         self.chat_history.setItemWidget(item, message)
@@ -159,6 +164,7 @@ class ChatLayout(QMainWindow):
 
 def run_app(*args, **kwargs):
     app = QApplication(sys.argv)
+    apply_stylesheet(app, theme='light_red.xml')
     transcribe_queue, companion_queue = args
     chat_receiver = MessageReceiver(transcribe_queue)
     companion_receiver = MessageReceiver(companion_queue)

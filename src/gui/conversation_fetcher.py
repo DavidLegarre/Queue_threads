@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from queue import Queue
 
 from loguru import logger
+from lorem import get_sentence
 
 
 def random_time():
@@ -14,7 +15,7 @@ def random_message():
     words = [
         "Hola", "Adios", "Buenas tardes"
     ]
-    return random.choice(words)
+    return get_sentence(word_range=(4, 20))
 
 
 def generate_messages(transcribe_queue: Queue):
