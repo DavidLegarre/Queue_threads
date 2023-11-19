@@ -27,4 +27,4 @@ def generate_messages(transcribe_queue: Queue):
         logger.info(f"Generating {output}")
         transcribe_queue.put(output)
         alternate = not alternate
-        time.sleep(3)
+        time.sleep(2)

@@ -1,11 +1,11 @@
 import sys
+import time
 from datetime import datetime
 from threading import Thread, Event
 
 from PySide6.QtCore import Qt, Slot, QObject, Signal
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QSizePolicy, \
     QScrollArea, QListWidget, QHBoxLayout, QLineEdit, QPushButton, QListWidgetItem
-from loguru import logger
 
 from src.data.data import client_style, agent_style, companion_style, input_style
 
@@ -20,15 +20,16 @@ class MessageReceiver(QObject):
     def start_receiving_messages(self):
         # Simulating receiving messages
         thread = Thread(
-            target=self.simulate_message_receiving
+            target=self.simulate_message_receiving,
+            daemon=True
         )
         thread.start()
 
     def simulate_message_receiving(self):
-        while not self.message_queue.empty():
+        while True:
             message_dict = self.message_queue.get()
             self.messageReceived.emit(message_dict)
-            Event().wait(2)
+            time.sleep(1)
 
 
 class ChatLayout(QMainWindow):
@@ -106,15 +107,20 @@ class ChatLayout(QMainWindow):
     def add_input(self):
         message = self.input.text()
         if message:
-            item = QListWidgetItem(self.chat_history)
-            message_widget = QLabel(f"User_input: {message}")
-            message_widget.setAlignment(Qt.AlignRight)
-            message_widget.setStyleSheet(input_style)
-            message_widget.setWordWrap(True)
-            item.setSizeHint(message_widget.sizeHint())
-            self.chat_history.addItem(item)
-            self.chat_history.setItemWidget(item, message_widget)
+            message = f"User inputted: {message}"
+            self.add_message_chat_history(message)
             self.input.clear()
+
+    def add_message_chat_history(self, message: str | QLabel):
+        item = QListWidgetItem(self.chat_history)
+        if isinstance(message, str):
+            message = QLabel(message)
+            message.setAlignment(Qt.AlignRight)
+            message.setStyleSheet(input_style)
+            message.setWordWrap(True)
+        item.setSizeHint(message.sizeHint())
+        self.chat_history.addItem(item)
+        self.chat_history.setItemWidget(item, message)
 
     @Slot(dict)
     def add_chat_message(self, message_dict):
@@ -136,7 +142,7 @@ class ChatLayout(QMainWindow):
 
         message_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
 
-        self.column0.addWidget(message_widget)
+        self.add_message_chat_history(message_widget)
 
     @Slot(dict)
     def add_companion_message(self, message_dict):
