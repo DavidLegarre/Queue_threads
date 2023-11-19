@@ -27,6 +27,12 @@ padding: 8px;
 border-radius: 8px;
 """
 
+input_style = """
+background-color: yellow;
+padding: 8px;
+border-radius: 8px;
+"""
+
 companion_style = """
 background-color: cyan;
 padding: 8px;

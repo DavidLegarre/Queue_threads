@@ -3,10 +3,11 @@ from datetime import datetime
 from threading import Thread, Event
 
 from PySide6.QtCore import Qt, Slot, QObject, Signal
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QLineEdit, \
-    QScrollArea, QSizePolicy
+from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QGridLayout, QMainWindow, QSizePolicy, \
+    QScrollArea, QListWidget, QHBoxLayout, QLineEdit, QPushButton, QListWidgetItem
+from loguru import logger
 
-from src.data.data import client_style, agent_style, companion_style
+from src.data.data import client_style, agent_style, companion_style, input_style
 
 
 class MessageReceiver(QObject):
@@ -35,13 +36,13 @@ class ChatLayout(QMainWindow):
         super().__init__()
         # Main window Config
         self.setWindowTitle("Chat")
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
+        self.central_widget = QWidget()
+        self.setCentralWidget(self.central_widget)
         self.resize(800, 600)
 
         # Set message receiver objects
-        self.chat_receiver = kwargs.get('chat_receiver', None)
-        self.companion_receiver = kwargs.get('companion_receiver', None)
+        self.chat_receiver = kwargs.get('chat_receiver')
+        self.companion_receiver = kwargs.get('companion_receiver')
 
         # Load ui
         self.setup_ui()
@@ -58,41 +59,62 @@ class ChatLayout(QMainWindow):
         """Left column"""
         column0_wrapper = QVBoxLayout()
 
-        # setup title
-        column0_title = QLabel("Transcription")
-        column0_title.setAlignment(Qt.AlignCenter)
+        # Add title
+        title = QLabel("Transcripción")
+        title.setAlignment(Qt.AlignCenter)
+        column0_wrapper.addWidget(title)
 
-        # Scrollable chat history
-        scroll_area = QScrollArea()
-        scroll_area.setWidgetResizable(True)
-
+        # Chat history column
         self.column0 = QVBoxLayout()
-        self.scroll_content = QWidget()
-        self.scroll_content.setLayout(self.column0)
+        chat_area = QScrollArea()
+        chat_area.setWidgetResizable(True)
+        self.chat_history = QListWidget()
+        self.chat_history.setLayout(self.column0)
+        chat_area.setWidget(self.chat_history)
+        column0_wrapper.addWidget(chat_area)
 
-        column0_wrapper.addWidget(column0_title)
-        column0_wrapper.addWidget(scroll_area)
+        # Set Column0 in layout
+        self.layout.addLayout(column0_wrapper, 0, 0)
+        self.layout.setColumnStretch(0, 2)
 
-
-        # setup input text area
-        self.input_chat = QVBoxLayout()
-        input_textbox = QLineEdit()
-        self.input_chat.addWidget(input_textbox)
+        # Input messages from user
+        self.input_layout = QHBoxLayout()
+        self.input = QLineEdit()
+        self.send = QPushButton("Send")
+        self.send.clicked.connect(self.add_input)
+        self.input_layout.addWidget(self.input)
+        self.input_layout.addWidget(self.send)
+        self.layout.addLayout(self.input_layout, 1, 0)
 
         """Right column"""
+        column1_wrapper = QVBoxLayout()
+
+        # Add title
+        title = QLabel("Companion")
+        title.setAlignment(Qt.AlignCenter)
+        column1_wrapper.addWidget(title)
+
+        # Companion text area
         self.column1 = QVBoxLayout()
+        companion_area = QScrollArea()
+        companion_area.setLayout(self.column1)
+        column1_wrapper.addWidget(companion_area)
 
-        # Right column title
-        column1_title = QLabel("Companion")
-        column1_title.setAlignment(Qt.AlignCenter)
-        self.column1.addWidget(column1_title)
+        # Set Column1 in layout
+        self.layout.addLayout(column1_wrapper, 0, 1)
 
-        # Setup layout
-        scroll_area.setWidget(self.scroll_content)
-        self.layout.addWidget(scroll_area)
-        self.layout.addLayout(column0_wrapper, 0, 0)
-        self.layout.addLayout(self.input_chat, 1, 0)
-        self.layout.addLayout(self.column1, 0, 1)
+    def add_input(self):
+        message = self.input.text()
+        if message:
+            item = QListWidgetItem(self.chat_history)
+            message_widget = QLabel(f"User_input: {message}")
+            message_widget.setAlignment(Qt.AlignRight)
+            message_widget.setStyleSheet(input_style)
+            message_widget.setWordWrap(True)
+            item.setSizeHint(message_widget.sizeHint())
+            self.chat_history.addItem(item)
+            self.chat_history.setItemWidget(item, message_widget)
+            self.input.clear()
 
     @Slot(dict)
     def add_chat_message(self, message_dict):
